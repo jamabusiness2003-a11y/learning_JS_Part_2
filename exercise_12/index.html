@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List with Categories & Filtering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>Todo List</h1>
+
+        <input type="text" id="taskInput" placeholder="Add Task...">
+
+        <select id="categories">
+            <option value="hobbies">Hobbies</option>
+            <option value="school">School</option>
+            <option value="personal">Personal</option>
+        </select>
+
+        <button id="addBtn">Add</button>
+
+        <select id="filter">
+            <option value="all">All</option>
+            <option value="hobbies">Hobbies</option>
+            <option value="school">School</option>
+            <option value="personal">Personal</option>
+        </select>
+
+        <ul id="listTasks"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
