@@ -1,0 +1,73 @@
+body {
+    background-color: #222222;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-timer {
+    background-color: #1C1D21;
+    width: 350px;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.display {
+    background-color: #111111;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 50px;
+    font-weight: 700;
+    width: 50%;
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+#minutes, #seconds {
+    background-color: #222222;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#startBtn, #pauseBtn, #resetBtn {
+    background-color: #222222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#startBtn:hover, #pauseBtn:hover, #resetBtn:hover {
+    background-color: #111111;
+}
+
+#startBtn:active, #pauseBtn:active, #resetBtn:active {
+    transform: scale(0.90);
+}
+
+.low-time {
+    color: #FFFF00;
+} 
