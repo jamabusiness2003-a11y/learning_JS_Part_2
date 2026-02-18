@@ -89,6 +89,27 @@ A functional calculator that performs basic arithmetic operations.
 - CSS
 - JavaScript
 
+# 13 - Countdown Timer 
+
+## Features 
+- Start, pause, and reset functionality
+- Real-time countdown display
+- Stops at zero automatically
+- Visuals warning when time is low
+- Optional sound alert
+
+## What I Learned
+- Working with `setInterval`
+- Time-based state management
+- Converting seconds to minutes format
+- Cleaning up intervals properly
+- Synchronizing UI with time logic
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
