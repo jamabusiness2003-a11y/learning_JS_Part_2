@@ -25,7 +25,6 @@ function renderTimer() {
 }
 
 function startTimer() {
-    if (minutesInput.value === "0" && secondsInput.value === "0") return;
 
     if (intervalId) return;
 
@@ -50,8 +49,9 @@ function startTimer() {
 
         if (previousSeconds <= 0 && previousMinutes <= 0) {
             clearInterval(intervalId);
-            audioPlayer.play();
+            intervalId = null;
             alert("Countdown Finished.");
+            audioPlayer.play();
             return;
         }
         renderTimer();
