@@ -70,6 +70,8 @@ A functional calculator that performs basic arithmetic operations.
 
 # 12 - Advanced To-Do List with Categories
 
+A task manager that allows categorizing and filtering tasks.
+
 ## Features 
 - Add tasks with categories
 - Filter tasks by category
@@ -89,7 +91,9 @@ A functional calculator that performs basic arithmetic operations.
 - CSS
 - JavaScript
 
-# 13 - Countdown Timer 
+# 13 - Countdown Timer
+
+A timer application that counts down from a user-defined duration.
 
 ## Features 
 - Start, pause, and reset functionality
@@ -104,6 +108,27 @@ A functional calculator that performs basic arithmetic operations.
 - Converting seconds to minutes format
 - Cleaning up intervals properly
 - Synchronizing UI with time logic
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
+# 14 - Drag and Drop List
+
+A reorderable list where items can be rearranged using drag-and-drop.
+
+## Features 
+- Drag and drop list items
+- Visual feedback during drag
+- Dynamic reordering
+- Optional persistance order saving
+
+## What I Learned
+- Using the Drag and Drop API
+- Handling drag events
+- Updating DOM order dynamically
+- Reflecting UI changes in data structures
 
 ## Technologies
 - HTML
