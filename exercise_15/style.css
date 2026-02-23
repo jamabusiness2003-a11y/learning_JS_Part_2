@@ -1,0 +1,77 @@
+body {
+    background-color: #333333;
+    min-height: 100vh;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-grid {
+    width: 600px;
+    height: 600px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+}
+
+.card {
+    border-radius: 8px;
+    font-size: 28px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-front {
+    border-radius: 8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #555555;
+    cursor: pointer;
+    color: white;
+}
+
+.card-back {
+    border-radius: 8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: #444444;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.card-back, .card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.matching {
+    background-color: green;
+}
+
+#moves, #timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: white
+}
