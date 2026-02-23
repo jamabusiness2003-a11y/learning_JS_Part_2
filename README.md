@@ -135,6 +135,30 @@ A reorderable list where items can be rearranged using drag-and-drop.
 - CSS
 - JavaScript
 
+# 15 - Memory Card Game
+
+A simple memory matching game where players flip cards to find matching pairs.
+
+## Features 
+- Shuffle cards randomly
+- Flip animation
+- Matching detection logic
+- Win condition detection
+- Move counter (optional)
+- Timer (optional)
+
+## What I Learned
+- Shuffling arrays
+- Managing game state
+- Delayed execution with `setTimeout`
+- Tracking conditions and progress
+- Building logic-driven interactive systems
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
