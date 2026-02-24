@@ -159,6 +159,29 @@ A simple memory matching game where players flip cards to find matching pairs.
 - CSS
 - JavaScript
 
+# 16 - Weather Fetcher (API)
+
+A JavaScript app that fetches and displays weather data for a selected city.
+
+## Features 
+- Fetch weather data using an API
+- Display temperature and weather conditions
+- Error handling for invalid cities
+- Save last searched city (optional)
+
+## What I Learned
+- Using the fetch API 
+- Parsing JSON responses
+- Handling network errors
+- Updating UI with external data
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
+**Important : API Key is required for this project.**
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
