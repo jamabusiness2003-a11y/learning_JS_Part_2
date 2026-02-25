@@ -267,499 +267,499 @@ Fetch and display weather data for a city using a public API.
 
 - Save last searched city in localStorage
 
-# 🟤 Exercise 17: Global State Manager (Vanilla JS)
+## 🟤 Exercise 17: Global State Manager (Vanilla JS)
 
-## 🎯 Goal
+### 🎯 Goal
 Manage shared state between multiple UI components.
 
-## 📄 HTML
+### 📄 HTML
 - Multiple UI sections (counter, toggle, text display)  
 - Buttons that update shared data  
 
-## 🎨 CSS
+### 🎨 CSS
 - Clear separation between components  
 - Visual indication of state changes  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Create a global state object  
 - Update state from multiple places  
 - Re-render UI when state changes  
 
-## 💡 Bonus
+### 💡 Bonus
 - Add a subscribe / notify system  
 
----
 
-# 🟤 Exercise 18: Undo / Redo System
 
-## 🎯 Goal
+## 🟤 Exercise 18: Undo / Redo System
+
+### 🎯 Goal
 Allow users to undo and redo actions.
 
-## 📄 HTML
+### 📄 HTML
 - Action button  
 - Undo button  
 - Redo button  
 - Output display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Disabled state for buttons  
 - Clear action feedback  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Use stacks to store past and future states  
 - Push state on each action  
 - Restore previous state on undo  
 
-## 💡 Bonus
+### 💡 Bonus
 - Limit history size  
 
----
 
-# 🟤 Exercise 19: Multi-Step Form Wizard
 
-## 🎯 Goal
+## 🟤 Exercise 19: Multi-Step Form Wizard
+
+### 🎯 Goal
 Split a form into multiple steps with navigation.
 
-## 📄 HTML
+### 📄 HTML
 - Multiple form sections  
 - Next / Back buttons  
 - Progress indicator  
 
-## 🎨 CSS
+### 🎨 CSS
 - Step transitions  
 - Active step highlight  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Track current step index  
 - Persist form data between steps  
 - Validate step before advancing  
 
-## 💡 Bonus
+### 💡 Bonus
 - Skip steps conditionally  
 
----
 
-# 🟤 Exercise 20: Dynamic Data Table
 
-## 🎯 Goal
+## 🟤 Exercise 20: Dynamic Data Table
+
+### 🎯 Goal
 Display data with sorting, filtering, and pagination.
 
-## 📄 HTML
+### 📄 HTML
 - Table  
 - Search input  
 - Pagination controls  
 
-## 🎨 CSS
+### 🎨 CSS
 - Table styling  
 - Active sort indicator  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Store table data in arrays  
 - Sort by column  
 - Filter rows dynamically  
 - Paginate results  
 
-## 💡 Bonus
+### 💡 Bonus
 - Multi-column sorting  
 
----
 
-# 🟤 Exercise 21: Debounced Search Input
 
-## 🎯 Goal
+## 🟤 Exercise 21: Debounced Search Input
+
+### 🎯 Goal
 Optimize search input performance.
 
-## 📄 HTML
+### 📄 HTML
 - Search input  
 - Result list  
 
-## 🎨 CSS
+### 🎨 CSS
 - Loading indicator  
 - Smooth result updates  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Implement debounce function  
 - Delay search execution  
 - Cancel previous timers  
 
-## 💡 Bonus
+### 💡 Bonus
 - Compare debounce vs throttle  
 
----
 
-# 🟤 Exercise 22: Retryable Fetch Request
 
-## 🎯 Goal
+## 🟤 Exercise 22: Retryable Fetch Request
+
+### 🎯 Goal
 Automatically retry failed network requests.
 
-## 📄 HTML
+### 📄 HTML
 - Fetch button  
 - Status display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Loading / error states  
 - Retry feedback  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Wrap fetch in retry logic  
 - Limit retry attempts  
 - Handle final failure  
 
-## 💡 Bonus
+### 💡 Bonus
 - Exponential backoff  
 
----
 
-# 🟤 Exercise 23: Parallel vs Sequential Fetching
 
-## 🎯 Goal
+## 🟤 Exercise 23: Parallel vs Sequential Fetching
+
+### 🎯 Goal
 Understand async performance differences.
 
-## 📄 HTML
+### 📄 HTML
 - Load button  
 - Result containers  
 
-## 🎨 CSS
+### 🎨 CSS
 - Side-by-side layout  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Fetch data sequentially  
 - Fetch data in parallel using `Promise.all`  
 - Measure completion time  
 
-## 💡 Bonus
+### 💡 Bonus
 - Visual loading timeline  
 
----
 
-# 🟤 Exercise 24: Loading State Machine
 
-## 🎯 Goal
+## 🟤 Exercise 24: Loading State Machine
+
+### 🎯 Goal
 Model async UI states explicitly.
 
-## 📄 HTML
+### 📄 HTML
 - Load button  
 - Status display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Styles for idle / loading / success / error  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Implement state enum  
 - Switch UI based on state  
 - Prevent invalid transitions  
 
-## 💡 Bonus
+### 💡 Bonus
 - Log state transitions  
 
----
 
-# 🟤 Exercise 25: Request Cancellation
 
-## 🎯 Goal
+## 🟤 Exercise 25: Request Cancellation
+
+### 🎯 Goal
 Cancel outdated network requests.
 
-## 📄 HTML
+### 📄 HTML
 - Search input  
 - Results area  
 
-## 🎨 CSS
+### 🎨 CSS
 - Loading feedback  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Use `AbortController`  
 - Cancel previous fetch on new input  
 - Handle abort errors cleanly  
 
-## 💡 Bonus
+### 💡 Bonus
 - “Latest request wins” logic  
 
----
 
-# 🟤 Exercise 26: Keyboard Shortcut System
 
-## 🎯 Goal
+## 🟤 Exercise 26: Keyboard Shortcut System
+
+### 🎯 Goal
 Add global keyboard shortcuts.
 
-## 📄 HTML
+### 📄 HTML
 - Action buttons  
 - Status display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Shortcut hint styling  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Listen to `keydown` events  
 - Detect modifier keys  
 - Trigger actions programmatically  
 
-## 💡 Bonus
+### 💡 Bonus
 - Allow custom shortcut mapping  
 
----
 
-# 🟤 Exercise 27: Event Delegation Engine
 
-## 🎯 Goal
+## 🟤 Exercise 27: Event Delegation Engine
+
+### 🎯 Goal
 Handle events efficiently for many elements.
 
-## 📄 HTML
+### 📄 HTML
 - Large list of items  
 - Container element  
 
-## 🎨 CSS
+### 🎨 CSS
 - Hover and active styles  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Attach one event listener to parent  
 - Detect event target  
 - Perform action based on clicked item  
 
-## 💡 Bonus
+### 💡 Bonus
 - Dynamically add items without new listeners  
 
----
 
-# 🟤 Exercise 28: Gesture Detection
 
-## 🎯 Goal
+## 🟤 Exercise 28: Gesture Detection
+
+### 🎯 Goal
 Detect swipe and long-press gestures.
 
-## 📄 HTML
+### 📄 HTML
 - Gesture area  
 - Output display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Touch feedback animations  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Track pointer start/end  
 - Measure distance and time  
 - Identify gesture type  
 
-## 💡 Bonus
+### 💡 Bonus
 - Support mouse + touch  
 
----
 
-# 🟤 Exercise 29: Custom Array Methods
 
-## 🎯 Goal
+## 🟤 Exercise 29: Custom Array Methods
+
+### 🎯 Goal
 Rebuild core array utilities.
 
-## 📄 HTML
+### 📄 HTML
 - Input data display  
 - Output display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Code-style formatting  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Implement custom `map`  
 - Implement custom `filter`  
 - Implement custom `reduce`  
 
-## 💡 Bonus
+### 💡 Bonus
 - Match native behavior exactly  
 
----
 
-# 🟤 Exercise 30: Priority Task Queue
 
-## 🎯 Goal
+## 🟤 Exercise 30: Priority Task Queue
+
+### 🎯 Goal
 Execute tasks based on priority.
 
-## 📄 HTML
+### 📄 HTML
 - Task input  
 - Priority selector  
 - Queue display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Priority color coding  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Store tasks with priority values  
 - Sort queue dynamically  
 - Execute highest-priority task first  
 
-## 💡 Bonus
+### 💡 Bonus
 - Pause / resume execution  
 
----
 
-# 🟤 Exercise 31: Memoization System
 
-## 🎯 Goal
+## 🟤 Exercise 31: Memoization System
+
+### 🎯 Goal
 Cache expensive function results.
 
-## 📄 HTML
+### 📄 HTML
 - Input field  
 - Compute button  
 - Result display  
 
-## 🎨 CSS
+### 🎨 CSS
 - Cache hit indicator  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Use closures for cache storage  
 - Return cached results when available  
 - Track cache size  
 
-## 💡 Bonus
+### 💡 Bonus
 - Cache expiration logic  
 
----
 
-# 🟤 Exercise 32: Permission-Based UI
 
-## 🎯 Goal
+## 🟤 Exercise 32: Permission-Based UI
+
+### 🎯 Goal
 Show or hide features based on user roles.
 
-## 📄 HTML
+### 📄 HTML
 - Role selector  
 - Feature buttons  
 
-## 🎨 CSS
+### 🎨 CSS
 - Disabled / hidden styles  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Define permission rules  
 - Conditionally render UI  
 - Prevent unauthorized actions  
 
-## 💡 Bonus
+### 💡 Bonus
 - Nested permissions  
 
----
 
-# 🟤 Exercise 33: Plugin Architecture
 
-## 🎯 Goal
+## 🟤 Exercise 33: Plugin Architecture
+
+### 🎯 Goal
 Allow features to be added dynamically.
 
-## 📄 HTML
+### 📄 HTML
 - Core app UI  
 - Plugin list  
 
-## 🎨 CSS
+### 🎨 CSS
 - Plugin section styling  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Register plugins dynamically  
 - Execute plugin hooks  
 - Isolate plugin logic  
 
-## 💡 Bonus
+### 💡 Bonus
 - Enable / disable plugins at runtime  
 
----
 
-# 🟤 Exercise 34: Feature Flag System
 
-## 🎯 Goal
+## 🟤 Exercise 34: Feature Flag System
+
+### 🎯 Goal
 Toggle features without changing core logic.
 
-## 📄 HTML
+### 📄 HTML
 - Feature toggles  
 - Feature UI sections  
 
-## 🎨 CSS
+### 🎨 CSS
 - Disabled feature indicators  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Store flags in config object  
 - Conditionally enable features  
 - Update flags dynamically  
 
-## 💡 Bonus
+### 💡 Bonus
 - Persist flags in `localStorage`  
 
----
 
-# 🟤 Exercise 35: Time-Travel Debugger
 
-## 🎯 Goal
+## 🟤 Exercise 35: Time-Travel Debugger
+
+### 🎯 Goal
 Replay past application states.
 
-## 📄 HTML
+### 📄 HTML
 - Action buttons  
 - Timeline slider  
 
-## 🎨 CSS
+### 🎨 CSS
 - Timeline visualization  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Store immutable state history  
 - Navigate backward / forward  
 - Restore UI from snapshot  
 
-## 💡 Bonus
+### 💡 Bonus
 - Label each state change  
 
----
 
-# 🟤 Exercise 36: Autosave System
 
-## 🎯 Goal
+## 🟤 Exercise 36: Autosave System
+
+### 🎯 Goal
 Automatically save user progress safely.
 
-## 📄 HTML
+### 📄 HTML
 - Editable input  
 - Save status indicator  
 
-## 🎨 CSS
+### 🎨 CSS
 - Saving / saved feedback  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Detect input changes  
 - Debounce save calls  
 - Persist data to `localStorage`  
 
-## 💡 Bonus
+### 💡 Bonus
 - Recovery after refresh  
 
----
 
-# 🟤 Exercise 37: Chat App Logic (No Backend)
 
-## 🎯 Goal
+## 🟤 Exercise 37: Chat App Logic (No Backend)
+
+### 🎯 Goal
 Simulate real chat behavior locally.
 
-## 📄 HTML
+### 📄 HTML
 - Message input  
 - Chat window  
 
-## 🎨 CSS
+### 🎨 CSS
 - Message bubbles  
 - Pending / sent states  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Optimistic UI updates  
 - Message state tracking  
 - Simulated delays/errors  
 
-## 💡 Bonus
+### 💡 Bonus
 - Message retry system  
 
----
 
-# 🟤 Exercise 38: Job Queue Simulator
 
-## 🎯 Goal
+## 🟤 Exercise 38: Job Queue Simulator
+
+### 🎯 Goal
 Simulate background job processing.
 
-## 📄 HTML
+### 📄 HTML
 - Job input  
 - Queue display  
 - Status output  
 
-## 🎨 CSS
+### 🎨 CSS
 - Processing indicators  
 
-## 🧠 JavaScript
+### 🧠 JavaScript
 - Queue data structure  
 - Process jobs sequentially  
 - Simulate execution time  
 
-## 💡 Bonus
+### 💡 Bonus
 - Concurrent workers  
