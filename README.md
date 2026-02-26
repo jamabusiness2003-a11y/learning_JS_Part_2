@@ -182,7 +182,7 @@ A JavaScript app that fetches and displays weather data for a selected city.
 
 **Important : API Key is required for this project.**
 
-# 17 Global State Manager (Vanilla JS)
+# 17 - Global State Manager (Vanilla JS)
 
 A centralized state management system that allow multiple components to share and update data consistently.
 
