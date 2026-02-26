@@ -182,6 +182,27 @@ A JavaScript app that fetches and displays weather data for a selected city.
 
 **Important : API Key is required for this project.**
 
+# 17 Global State Manager (Vanilla JS)
+
+A centralized state management system that allow multiple components to share and update data consistently.
+
+## Features 
+- Global state object
+- Multiple components reading from same state
+- Automatic UI re-render on state change
+- Simple pub/sub implementation (optional)
+
+## What I Learned
+- Single source of truth
+- State synchronization
+- Publish/subscribe pattern
+- Why state management libraries exist
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
