@@ -27,7 +27,7 @@ function setState(updater) {
     if (past.length > MAX_HISTORY) {
         past.shift();
     }
-
+    
     state = updater(state);
     future = [];
     notify("stateChange", state);
