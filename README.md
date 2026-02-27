@@ -203,6 +203,27 @@ A centralized state management system that allow multiple components to share an
 - CSS
 - JavaScript
 
+# 18 - Undo / Redo System
+
+An application that tracks user actions and allows undoing and redoing changes.
+
+## Features 
+- Perform actions
+- Undo previous actions
+- Redo reverted actions
+- History stack management
+
+## What I Learned
+- Stack data structures
+- Immutable state snapshots
+- Time-travel logic
+- Command pattern basics
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
