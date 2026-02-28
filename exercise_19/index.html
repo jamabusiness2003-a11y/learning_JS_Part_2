@@ -7,6 +7,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Multi-Step Form</h1>
+
+    <form id="multiStepForm" action="">
+
+        <section class="step">
+            <div class="field">
+                <label for="firstName">First Name: </label>
+                <input type="text" id="firstName" placeholder="First name...">
+            </div>
+            <div class="field">
+                <label for="lastName">Last Name: </label>
+                <input type="text" id="lastName" placeholder="Last name...">
+            </div>      
+        </section>
+
+        <section class="step hidden">
+            <div class="field">
+                <label for="email">Email: </label>
+                <input type="email" id="email" placeholder="E-mail...">
+            </div>
+            <div class="field">
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" placeholder="Phone...">
+            </div>
+        </section>
+
+        <section class="step hidden">
+            <div class="field">
+                <label for="username">Username: </label>
+                <input type="text" id="username" placeholder="Username...">
+            </div>
+            <div class="field">
+                <label for="password">Password: </label>
+                <input type="password" id="password" placeholder="Password...">
+            </div>
+        </section>
+
+        <div class="buttons">
+            <button type="button" class="hidden" id="backBtn">Back</button>
+            <button type="button" id="nextBtn">Next</button>
+            <button type="submit" class="hidden" id="submit">Submit</button>
+        </div>
+
+        <div class="indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </form>
+
     <script src="script.js"></script>
 </body>
 </html>
