@@ -22,9 +22,15 @@ form {
 }
 
 .step {
-    display: flex;
+    display: none;
     flex-direction: column;
-    transition: opacity 0.4s ease;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.step.active {
+    display: flex;
+    opacity: 1;
 }
 
 .field {
@@ -50,6 +56,10 @@ form {
     border-color: #007de3;
 }
 
+.field input.error {
+    border-color: #c91a03;
+}
+
 .buttons {
     display: flex;
     gap: 10px;
@@ -58,21 +68,41 @@ form {
 
 .buttons button {
     border: none;
-    background-color: #007de3;
     color: white;
     padding: 8px 16px;
     border-radius: 6px;
     font-size: 18px;
+    cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.buttons button:hover {
+.buttons #backBtn {
+    background-color: #dddddd;
+}
+
+.buttons #nextBtn,
+.buttons #submitBtn {
+    background-color: #007de3;
+}
+
+
+.buttons #nextBtn:hover,
+.buttons #submitBtn:hover {
     background-color: #00569c;
-    cursor: pointer;
+}
+
+.buttons #backBtn:hover {
+    background-color: #bbbbbb;
 }
 
 .buttons button:active {
     transform: scale(0.98);
+}
+
+.buttons #nextBtn.hidden,
+.buttons #backBtn.hidden,
+.buttons #submitBtn.hidden {
+    display: none;
 }
 
 .indicators {
@@ -82,21 +112,18 @@ form {
 }
 
 .indicators .indicator {
-    background-color: #cccccc;
+    background-color: #aaaaaa;
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    transition: background-color 0.3s;
+    opacity: 0.5;
+    transition: all 0.3s ease;
 }
 
 .indicators .indicator.active {
-    background-color: #aaaaaa;
+    opacity: 1;
 }
 
 .indicators .indicator.completed {
     background-color: #007de3;
-}
-
-.hidden {
-    display: none;
 }
