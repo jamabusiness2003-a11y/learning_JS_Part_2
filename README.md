@@ -224,6 +224,22 @@ An application that tracks user actions and allows undoing and redoing changes.
 - CSS
 - JavaScript
 
+# 19 - Multi-Step Form Wizard
+
+A multi-step form with navigation and validation.
+
+## Features 
+- Step-by-step navigation
+- Progress indicator
+- Validation per step
+- Data persistence between steps
+
+## What I Learned
+- Managing multi-stage state
+- Conditional rendering
+- Step validation logic
+- UX-driven flow control
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
