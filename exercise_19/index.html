@@ -9,44 +9,44 @@
 <body>
     <h1>Multi-Step Form</h1>
 
-    <form id="multiStepForm" action="">
+    <form id="multiStepForm">
 
         <section class="step">
             <div class="field">
-                <label for="firstName">First Name: </label>
-                <input type="text" id="firstName" name="firstName" placeholder="First name...">
+                <label>First Name: </label>
+                <input type="text"  name="firstName" placeholder="First name..." required>
             </div>
             <div class="field">
-                <label for="lastName">Last Name: </label>
-                <input type="text" id="lastName" name="lastName" placeholder="Last name...">
+                <label>Last Name: </label>
+                <input type="text" name="lastName" placeholder="Last name..." required>
             </div>      
         </section>
 
         <section class="step">
             <div class="field">
-                <label for="email">Email: </label>
-                <input type="email" id="email" name="email" placeholder="E-mail...">
+                <label>Email: </label>
+                <input type="email" name="email" placeholder="E-mail..." required>
             </div>
             <div class="field">
-                <label for="phone">Phone: </label>
-                <input type="tel" id="phone" name="phone" placeholder="Phone...">
+                <label>Phone: </label>
+                <input type="tel" name="phone" placeholder="Phone..." required>
             </div>
         </section>
 
         <section class="step">
             <div class="field">
-                <label for="username">Username: </label>
-                <input type="text" id="username" name="username" placeholder="Username...">
+                <label>Username: </label>
+                <input type="text" name="username" placeholder="Username..." required>
             </div>
             <div class="field">
-                <label for="password">Password: </label>
-                <input type="password" id="password" name="password" placeholder="Password...">
+                <label>Password: </label>
+                <input type="password" name="password" placeholder="Password..." required>
             </div>
         </section>
 
         <div class="buttons">
-            <button type="button" id="backBtn">Back</button>
-            <button type="button" id="nextBtn">Next</button>
+            <button type="button" class="back-btn" id="backBtn">Back</button>
+            <button type="button" class="next-btn" id="nextBtn">Next</button>
             <button type="submit" id="submitBtn">Submit</button>
         </div>
 

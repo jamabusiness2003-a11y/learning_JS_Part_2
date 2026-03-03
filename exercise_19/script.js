@@ -1,26 +1,18 @@
 const form = document.getElementById("multiStepForm");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const username = document.getElementById("username");
-const password = document.getElementById("password");
 const nextBtn = document.getElementById("nextBtn");
 const backBtn = document.getElementById("backBtn");
 const submitBtn = document.getElementById("submitBtn");
 
-const steps = form.querySelectorAll(".step");
-const indicators = form.querySelectorAll(".indicator");
+const steps = [...form.querySelectorAll(".step")];
+const indicators = [...form.querySelectorAll(".indicator")];
 
-const formDataStore = {};
+let formDataStore = {};
 
 let state = { 
     currentStepIndex: 0,
     previousStepIndex: null
 };
 
-nextBtn.addEventListener("click", nextStep);
-backBtn.addEventListener("click", prevStep);
 
 function render() {
     const {currentStepIndex, previousStepIndex} = state;
@@ -41,13 +33,13 @@ function render() {
 }  
 
 function nextStep() {
-
     if (!validateStep()) return;
+
+    saveStep();
 
     state.previousStepIndex = state.currentStepIndex;
     state.currentStepIndex++;
 
-    saveStep();
     render();
 }
 
@@ -56,7 +48,7 @@ function prevStep() {
     state.previousStepIndex = state.currentStepIndex;
     state.currentStepIndex--;
 
-    saveStep();
+    
     render();
 }
 
@@ -68,17 +60,47 @@ function saveStep() {
 }
 
 function validateStep() {
-    const inputs = steps[state.currentStepIndex].querySelectorAll("input");
-    
-    for (let input of inputs) {
-        if (input.value === "") {
-            input.classList.add("error");
-            return false;
+    const requiredInputs = steps[state.currentStepIndex].querySelectorAll("[required]");
+    return [...requiredInputs].every(input => input.value.trim() !== "");
+}
+
+form.addEventListener("click", (e) => {
+    const inputs = steps[state.currentStepIndex].querySelectorAll("[required]");
+    if (nextBtn && e.target.classList.contains("next-btn")) {
+        
+        inputs.forEach(input => input.classList.remove("error"));
+        if (!validateStep()) {
+            inputs.forEach(input => {
+                if (!input.value.trim()) input.classList.add("error");
+            });
+            return;
         }
-        input.classList.remove("error");
+
+        nextStep();
     }
 
-    return true;
-}
+    if (backBtn && e.target.classList.contains("back-btn")) {
+        prevStep();
+    }
+});
+
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    saveStep();
+    alert("Form Submitted Successfully !!!")
+    console.log("Submitted Date: ", formDataStore);
+
+    form.reset();
+    formDataStore = {};
+    state = {
+        currentStepIndex: 0,
+        previousStepIndex: null
+    };
+    
+    steps.forEach(step => step.classList.remove("active"));
+    indicators.forEach(indicator => indicator.classList.remove("active"));
+    render();
+});
 
 render();
