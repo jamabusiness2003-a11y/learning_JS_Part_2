@@ -2,6 +2,11 @@ const searchInput = document.getElementById("search");
 const table = document.getElementById("dynamicTable");
 const pagination = document.getElementById("pagination");
 
+const tbody = table.querySelector("tbody");
+const paginationList = pagination.querySelector("ul");
+
+const ITEMS_PER_PAGE = 5;
+
 const data = [
     { id: 101, name: "Hannah Brooks", role: "Data Scientist" },
     { id: 102, name: "Victor Alvarez", role: "Mechanical Engineer" },
@@ -35,41 +40,130 @@ const data = [
     { id: 130, name: "Lily Adams", role: "Veterinarian" }
 ];
 
-
-let state = { 
-    isAscending: true,
-    sortColumn: null,
-    isMatching: false,
-    currentPage: 1
-};
-
 const columnMap = {
     ID: "id",
     Name: "name",
     Profession: "role"
 };
 
-const TOTAL_ITEMS = data.length;
-const ITEM_PER_PAGES = 5;
+const state = { 
+    isAscending: true,
+    sortColumn: null,
+    currentPage: 1,
+    searchTerm: ""
+};
 
-searchInput.addEventListener("input", filterRows);
 
-table.addEventListener("click", (e) => {
-    const columnKey = columnMap[e.target.textContent];
+searchInput.addEventListener("input", handleSearch);
+table.addEventListener("click", handleSort);
 
-    if (!columnKey) return;
 
-    state.isAscending = state.sortColumn === columnKey 
-        ? !state.isAscending
-        : true;
-    
-    state.sortColumn = columnKey;
+
+function handleSearch(e) {
+    state.searchTerm = e.target.value.toLowerCase();
+    state.currentPage = 1;
+    update();
+}
+
+function handleSort(e) {
+    const column = columnMap[e.target.textContent];
+
+    if (!column) return;
+
+    state.isAscending = 
+        state.sortColumn === column ? !state.isAscending : true;
+
+    state.sortColumn = column;
 
     toggleSortIndicator(e.target);
+    update();
+}
 
-    const sortedData = sortByColunm(data, columnKey, state.isAscending);
-    renderTable(sortedData, state.currentPage);
-});
+function update() {
+    let processed = [...data];
+
+    processed = filterData(processed, state.searchTerm);
+
+    if (state.sortColumn) {
+        processed = sortData(processed, state.sortColumn, state.isAscending);
+    }
+
+    const pageCount = Math.ceil(processed.length / ITEMS_PER_PAGE);
+    const pageData = paginateData(processed, state.currentPage);
+
+    renderRows(pageData);
+    renderPagination(pageCount);
+}
+
+function filterData(rows, searchTerm) {
+    if (!searchTerm) return rows;
+
+    return rows.filter(row => 
+        Object.values(row)
+            .join(" ")
+            .toLowerCase()
+            .includes(searchTerm)
+    );
+}
+
+function sortData(rows, column, isAscending) {
+    return [...rows].sort((a, b) => {
+        const valA = a[column];
+        const valB = b[column];
+
+        if (typeof valA === "number") {
+            return isAscending ? valA - valB : valB - valA;
+        }
+
+        return isAscending
+            ? String(valA).localeCompare(String(valB))
+            : String(valB).localeCompare(String(valA));
+    });
+}
+
+function paginateData(rows, currentPage) {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return rows.slice(start, start + ITEMS_PER_PAGE);
+}
+
+function renderRows(rows) {
+    tbody.innerHTML = "";
+
+    rows.forEach(({id, name, role}) => {
+        const tr = document.createElement("tr");
+        
+        [id, name, role].forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value;
+            tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+    });
+}
+
+function renderPagination(pageCount) {
+    paginationList.innerHTML = "";
+
+    for (let page = 1; page <= pageCount; page++) {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+
+        link.textContent = page;
+
+        if (page === state.currentPage) {
+            link.classList.add("active");
+        }
+
+        link.addEventListener("click", () => {
+            state.currentPage = page;
+            update();
+        });
+
+        li.appendChild(link);
+        paginationList.appendChild(li);
+    }
+}
 
 function toggleSortIndicator(element) {
     const headers = table.querySelectorAll("th");
@@ -81,77 +175,4 @@ function toggleSortIndicator(element) {
     element.classList.add(state.isAscending ? "sort-asc" : "sort-desc");
 }
 
-function renderTable(rows, currentPage) {
-    const tbody = table.querySelector("tbody");
-    const unorderedList = pagination.querySelector("ul"); 
-    const pageData = paginate(rows, currentPage);
-    const pageCount = Math.ceil(TOTAL_ITEMS / ITEM_PER_PAGES);
-    
-    tbody.innerHTML = "";
-    unorderedList.innerHTML = "";
-
-    pageData.forEach(({id, name, role}) => {
-        const row = document.createElement("tr");
-        
-        [id, name, role].forEach(value => {
-            const cell = document.createElement("td");
-            cell.textContent = value;
-            row.appendChild(cell);
-        });
-
-        tbody.appendChild(row);
-    });
-
-    for (let page = 1; page <= pageCount; page++) {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-
-        link.textContent = page;
-
-        link.addEventListener("click", () => {
-            state.currentPage = page;
-            renderTable(rows, state.currentPage);
-        });
-
-        li.appendChild(link);
-        unorderedList.appendChild(li);
-    }
-}
-
-function sortByColunm(data, column, isAscending = true) {
-    return data.sort((a, b) => {
-        const valA = a[column];
-        const valB = b[column];
-
-        if (typeof valA === "number") {
-            return isAscending
-                ? valA - valB
-                : valB - valA;
-        }
-
-        return isAscending
-            ? String(valA).localeCompare(String(valB))
-            : String(valB).localeCompare(String(valA));
-    });
-}
-
-function filterRows() {
-    const searchValue = searchInput.value.toLowerCase();
-    const rows = table.querySelectorAll("tbody tr");
-
-    rows.forEach(row => {
-        state.isMatching = row.textContent.toLowerCase().includes(searchValue);
-
-        row.classList.toggle("hidden", searchValue && !state.isMatching);
-    });
-}
-
-function paginate(rows, currentPage) {
-    const start = (currentPage - 1) * ITEM_PER_PAGES;
-    const end = currentPage * ITEM_PER_PAGES;
-
-    return rows.slice(start, end);  
-}
-
-
-renderTable(data, state.currentPage);
+update();

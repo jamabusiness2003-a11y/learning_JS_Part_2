@@ -104,6 +104,11 @@ th.sort-desc::after {
     color: white;
 }
 
+.pagination ul li a.active {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 tbody tr:hover {
     background-color: #eef4ff;
 }
@@ -111,8 +116,4 @@ tbody tr:hover {
 
 input:focus {
     border-color: #007fe5;
-}
-
-.hidden {
-    display: none;
 }
