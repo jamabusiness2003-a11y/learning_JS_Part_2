@@ -1,0 +1,118 @@
+body {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 500px;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    outline: none;
+    border: 2px solid #ccc;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: border-color 0.3s;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+    background-color: #f1f2f3;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    border: 2px solid #dee2e6;
+    cursor: pointer;
+    position: relative;
+}
+
+td {
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+th::after {
+    content: "";
+    position: absolute;
+    font-size: 12px;
+}
+
+th.sort-asc::after {
+    content: "▲";
+    font-size: 12px;
+    margin-left: 5px;
+    color: #007bff;
+}
+
+th.sort-desc::after {
+    content: "▼";
+    font-size: 12px;
+    margin-left: 5px;
+    color: #007bff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.pagination ul li a {
+    text-decoration: none;
+    padding: 8px 14px;
+    color: #333;
+    background-color: #c4c4c4;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #eef4ff;
+}
+
+
+input:focus {
+    border-color: #007fe5;
+}
+
+.hidden {
+    display: none;
+}
