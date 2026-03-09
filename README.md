@@ -240,6 +240,22 @@ A multi-step form with navigation and validation.
 - Step validation logic
 - UX-driven flow control
 
+# 20 - Dynamic Data Table 
+
+An interactive data table with sorting, filtering and pagination.
+
+## Features 
+- Column sorting
+- Live filtering
+- Pagination system
+- Dynamic table rendering
+
+## What I Learned
+- Derived state
+- Data transformation
+- Performance considerations
+- Scalable UI rendering
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
