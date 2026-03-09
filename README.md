@@ -240,6 +240,11 @@ A multi-step form with navigation and validation.
 - Step validation logic
 - UX-driven flow control
 
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 # 20 - Dynamic Data Table 
 
 An interactive data table with sorting, filtering and pagination.
@@ -255,6 +260,11 @@ An interactive data table with sorting, filtering and pagination.
 - Data transformation
 - Performance considerations
 - Scalable UI rendering
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
 
 ## How to Run
 1. Download the project
