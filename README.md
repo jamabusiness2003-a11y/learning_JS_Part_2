@@ -266,6 +266,27 @@ An interactive data table with sorting, filtering and pagination.
 - CSS
 - JavaScript
 
+# 21 - Debounced Search Input
+
+A search system optimized to prevent excessive function execution.
+
+## Features 
+- Debounced input handling
+- Efficient search triggering
+- Cancel previous timers
+- Smooth result updates
+
+## What I Learned
+- Debounce vs throttle
+- Timer control flow
+- Performance optimization
+- Event efficiency
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
