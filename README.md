@@ -287,6 +287,27 @@ A search system optimized to prevent excessive function execution.
 - CSS
 - JavaScript
 
+# 22 - Retryable Fetch Request 
+
+A resilient network request system with retry logic.
+
+## Features 
+- Automatic retry attempts
+- Error handling
+- Final failure state
+- Optional exponential backoff
+
+## What I Learned
+- Promise chaining
+- Error recovery strategies
+- Resilience patterns
+- Network reliability thinking
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
