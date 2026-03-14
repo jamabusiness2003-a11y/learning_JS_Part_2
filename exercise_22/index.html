@@ -12,13 +12,11 @@
 
         <button id="fetchBtn">Fetch</button>
 
-        <div id="loader" class="hidden"></div>
-
-        <div id="statusDisplay" class="error-box hidden">
-            <p>⚠️ Failed to load data.</p>
-            <button id="retryBtn">Retry</button>
+        <div id="statusDisplay">
+            <span id="spinner" class="loader hidden"></span>
+            <span id="statusText"></span>
         </div>
-    </div>
+    </div> 
 
     <script src="script.js"></script>
 </body>

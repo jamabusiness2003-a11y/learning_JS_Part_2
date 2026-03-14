@@ -1,35 +1,55 @@
 const fetchBtn = document.getElementById("fetchBtn");
-const statusDisplay = document.getElementById("statusDisplay");
-const loader = document.getElementById("loader");
-const retryBtn = document.getElementById("retryBtn");
+const spinner = document.getElementById("spinner");
+const statusText = document.getElementById("statusText");
 
-const url = "https://api.example.com/"
+const url = "https://jsonplaceholder.typicode.com/posts/1/"
 
-fetchBtn.addEventListener("click", () => fetchData(url));
-retryBtn.addEventListener("click", () => fetchData(url));
+fetchBtn.addEventListener("click", () => {
+    fetchWithRetry(url);
+});
 
-async function fetchWithRetry(callback, retries = 5, backoff = 5000) {
-    for (let attempts = 0; attempts < retries; attempts++) {
-        try {
-            loader.classList.remove("hidden");
-            statusDisplay.classList.add("hidden");
-            return await callback();
-        } catch (error) {
-            if (attempts === retries - 1){
-                loader.classList.add("hidden");
-                statusDisplay.classList.remove("hidden");
-            }
-            const delay = backoff * Math.pow(2, attempts);    
-            await new Promise(resolve => setTimeout(resolve, delay));
+
+async function fetchWithRetry(url, retries = 5, delay = 1000) {
+    statusText.parentElement.classList.remove("error-box");
+
+    try {
+
+        spinner.classList.remove("hidden");
+        statusText.textContent = "Loading...";
+
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error("Request Failed");
         }
-    };
+
+        const data = await response.json();
+
+        spinner.classList.add("hidden");
+        statusText.textContent = `Success: ${data.title}`
+
+    } catch (error) {
+
+        if (retries > 0) {
+
+            statusText.textContent = `Retry... Attempts left: ${retries}`;
+        
+            await wait(delay);
+
+            return fetchWithRetry(url, retries - 1, delay * 2);   
+        } else {
+            spinner.classList.add("hidden");
+            displayErrorBox();
+        }
+    }
 }
 
-async function fetchData(url) {
-    try {
-        const data = fetchWithRetry(() => fetch(url));
-        console.log("Data fetched", data);
-    } catch (error) {
-        console.error(error.message);
-    }
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function displayErrorBox() {
+    statusText.textContent = "⚠️ Failed to load data.";
+    statusText.parentElement.classList.add("error-box");
 }
