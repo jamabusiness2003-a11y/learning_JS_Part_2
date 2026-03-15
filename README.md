@@ -308,6 +308,27 @@ A resilient network request system with retry logic.
 - CSS
 - JavaScript
 
+# 23 - Parallel vs Sequential Fetching
+
+A comparison project showing async performance differences.
+
+## Features 
+- Sequential API requests
+- Parallel API requests
+- Performance comparison display
+- Loading states
+
+## What I Learned
+- Promise.all
+- Async execution flow
+- Performance measurement
+- Concurrency basics
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
