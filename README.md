@@ -329,6 +329,26 @@ A comparison project showing async performance differences.
 - CSS
 - JavaScript
 
+# 24 - Loading State Machine
+
+A structured async state system.
+
+## Features 
+- Explicit states (idle, loading, success, error)
+- Prevent invalid transitions
+- Clear UI feedback
+
+## What I Learned
+- State machine modeling 
+- Predictable async flows
+- Eliminating impossible states
+- Structured logic design
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
