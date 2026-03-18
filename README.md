@@ -349,6 +349,25 @@ A structured async state system.
 - CSS
 - JavaScript
 
+# 25 - Request Cancellation System
+
+A search feature that cancels outdated requests.
+
+## Features 
+- AbortController implementation
+- Latest-request-wins logic
+- Clean cancellation handling
+
+## What I Learned
+- Handling race conditions
+- Request lifecycle management
+- Async cleanup strategies
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
