@@ -368,6 +368,26 @@ A search feature that cancels outdated requests.
 - CSS
 - JavaScript
 
+# 26 - Keyboard Shortcut System
+
+Global keyboard shortcuts integrated into a web app.
+
+## Features 
+- Detect key combinations
+- Trigger UI actions
+- Configurable shortcuts
+
+## What I Learned
+- Keyboard events
+- Modifier keys
+- Accessibility considerations
+- Input normalization
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
 ## How to Run
 1. Download the project
 2. Run `index.html` with live server extension in VScode
