@@ -35,6 +35,11 @@ function normalizeKey(e) {
 
     if (e.ctrlKey) keys.push("Ctrl");
 
-    keys.push(e.key.toLowerCase());
+    let key = e.key.toLowerCase();
+    
+    if (!["control"].includes(key)) {
+        keys.push(e.key.toLowerCase());
+    }
+    
     return keys.join("+");
 }
