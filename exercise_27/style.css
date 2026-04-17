@@ -1,0 +1,61 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container {
+    padding: 20px;
+    width: 300px;
+}
+
+.input-field {
+    padding: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#listItems {
+    list-style: none;
+    padding: 0;
+}
+
+#listItems li {
+    font-size: 18px;
+    padding: 15px;
+    margin: 5px 0;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#listItems li.completed {
+    text-decoration: line-through;
+    background-color: #555555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#listItems li:not(.completed):hover {
+    background-color: #246591;
+}
+
+#listItems li:not(.completed):active {
+    transform: scale(0.95);
+}
